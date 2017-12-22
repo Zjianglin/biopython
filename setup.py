@@ -29,9 +29,11 @@ import os
 
 # encoding=utf8  
 
-reload(sys)  
+import importlib
+
+importlib.reload(sys)  
 sys.setdefaultencoding('utf8')
-print(sys.getdefaultencoding())
+print_function(sys.getdefaultencoding())
 
 try:
     from setuptools import setup
