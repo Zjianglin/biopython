@@ -27,6 +27,12 @@ from __future__ import print_function
 import sys
 import os
 
+# encoding=utf8  
+
+reload(sys)  
+sys.setdefaultencoding('utf8')
+print(sys.getdefaultencoding())
+
 try:
     from setuptools import setup
     from setuptools import Command
@@ -422,7 +428,7 @@ if is_Numpy_installed():
 __version__ = "Undefined"
 for line in open('Bio/__init__.py'):
     if (line.startswith('__version__')):
-        exec(line.strip())
+        exec(line.decode('utf-8').strip())
 
 # We now load in our reStructuredText README.rst file to pass
 # explicitly in the metadata since at time of writing PyPI
